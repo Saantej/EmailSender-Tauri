@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Введите почту</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="/main.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Отправка почты</h1>
+
+    <form id="email-form">
+      <div id="email-fields">
+        <div class="email-field">
+          <input type="email" placeholder="Enter email" class="email-input" required />
+          <button type="button" class="remove-email-button">✖</button>
+        </div>
+      </div>
+      <button type="button" id="add-email-button">Добавить ещё</button>
+      
+      <div class="file-upload">
+        <label for="html-file">Выбрать HTML файл</label>
+        <input type="file" id="html-file" accept=".html" />
+      </div>
+
+      <button type="submit" id="send-button">Отправить</button>
+    </form>
+
+    <p id="response-msg"></p>
+  </div>
+</body>
+</html>
