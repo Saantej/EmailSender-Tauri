@@ -1,10 +1,16 @@
 # Tauri + Vanilla
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Javascript.
+Этот шаблон поможет вам быстро начать разработку с Tauri, используя чистый HTML, CSS и JavaScript.
 
-## Recommended IDE Setup
+Для удобства разработки мы рекомендуем использовать следующие инструменты:
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- **[VS Code](https://code.visualstudio.com/)** – мощный редактор кода с множеством расширений.
+- **[Tauri Extension](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode)** – расширение для интеграции с Tauri.
+- **[rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)** – инструмент для поддержки Rust в VS Code.
 
-# Desktop Version on mac & windows
+## Сборка для Desktop
 
+Для сборки приложения под вашу операционную систему, используйте команду:
+
+```bash
+npm run tauri build
