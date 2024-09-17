@@ -5,6 +5,10 @@ function getEmailInputs() {
   return Array.from(emailInputs).map(input => input.value);
 }
 
+function getHeaderValue() {
+  return document.querySelector("#email-headers").value;
+}
+
 function addEmailField() {
   const emailFieldsContainer = document.querySelector("#email-fields");
   const newField = document.createElement("div");
@@ -24,7 +28,8 @@ function addEmailField() {
 async function sendEmails() {
   const emails = getEmailInputs();
   const htmlFile = document.querySelector("#html-file").files[0];
-  
+  const headers = getHeaderValue();
+
   if (!htmlFile) {
     document.querySelector("#response-msg").textContent = "Please select an HTML file.";
     return;
@@ -35,7 +40,7 @@ async function sendEmails() {
     const htmlContent = event.target.result;
 
     try {
-      await invoke("send_email", { toEmails: emails, htmlContent: htmlContent });
+      await invoke("send_email", { toEmails: emails, htmlContent: htmlContent, headers: headers });
       document.querySelector("#response-msg").textContent = "Emails sent successfully!";
     } catch (error) {
       document.querySelector("#response-msg").textContent = `Failed to send emails: ${error}`;

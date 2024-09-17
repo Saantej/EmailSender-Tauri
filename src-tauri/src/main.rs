@@ -8,7 +8,7 @@ use native_dialog::FileDialog;
 use std::fs;
 
 #[tauri::command]
-fn send_email(to_emails: Vec<String>, html_content: &str) -> Result<(), String> {
+fn send_email(to_emails: Vec<String>, html_content: &str, headers: &str) -> Result<(), String> {
     let creds = Credentials::new(
         "admin@studiya-saitov.com".to_string(),
         "wobavacbkytiqwdz".to_string(),
@@ -23,7 +23,7 @@ fn send_email(to_emails: Vec<String>, html_content: &str) -> Result<(), String> 
         let email = Message::builder()
             .from("admin@studiya-saitov.com".parse::<Mailbox>().unwrap())
             .to(to_email.parse::<Mailbox>().unwrap())
-            .subject("МАРКЕТИНГОВОЕ АГЕНТСТВО")
+            .subject(headers)
             .header(ContentType::TEXT_HTML)
             .body(html_content.to_string())
             .expect("Failed to create email");
