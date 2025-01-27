@@ -10,8 +10,8 @@ use std::fs;
 #[tauri::command]
 fn send_email(to_emails: Vec<String>, html_content: &str, headers: &str) -> Result<(), String> {
     let creds = Credentials::new(
-        "admin@studiya-saitov.com".to_string(),
-        "wobavacbkytiqwdz".to_string(),
+        "".to_string(),
+        "".to_string(),
     );
 
     let mailer = SmtpTransport::relay("smtp.yandex.ru")
